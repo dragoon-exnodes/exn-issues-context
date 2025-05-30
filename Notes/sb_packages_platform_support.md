@@ -116,7 +116,7 @@ This document evaluates the feasibility of adding Windows as an additional platf
 
 - Review and replace packages/plugins that are not supported on Windows (High)
 - Verify and configure supported packages/plugins according to Windows documentation (Medium)
-- Adjust UI/UX if the app is overly mobile-centric (e.g., swipe gestures, mobile-style navigation) (Medium)
+- Adjust UI/UX for Windows POS use, as the current design targets Android-based POS devices and tablets (e.g., touch interfaces, fixed orientations, mobile navigation paradigms) (Medium)
 - Rewrite native logic if using `MethodChannel` that has no Windows implementation (High)
 
 ### Challenges:
@@ -126,14 +126,14 @@ This document evaluates the feasibility of adding Windows as an additional platf
 
 ## Risk Summary
 
-| Risk / Blocker               | Description                                    | Mitigation                                     |
-| ---------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| `flutter_nuvei_sdk` unknown  | No confirmation of SDK support for Windows     | Contact Nuvei, propose web wrapper as fallback |
-| No plugin alternative        | Some Android/iOS-only plugins cannot be ported | Temporarily disable feature or rebuild plugin  |
-| UX non-optimized for desktop | App may feel too "mobile" on desktop           | Adjust layout, navigation, scaling             |
-| Testing surface increases    | Now needs Windows regression testing           | Add Windows test plan                          |
+| Risk / Blocker                   | Description                                          | Mitigation                                     |
+| -------------------------------- | ---------------------------------------------------- | ---------------------------------------------- |
+| `flutter_nuvei_sdk` unknown      | No confirmation of SDK support for Windows           | Contact Nuvei, propose web wrapper as fallback |
+| No plugin alternative            | Some Android/iOS-only plugins cannot be ported       | Temporarily disable feature or rebuild plugin  |
+| UX non-optimized for Windows POS | App may feel overly tailored for Android POS/tablets | Adjust layout, navigation, scaling             |
+| Testing surface increases        | Now needs Windows regression testing                 | Add Windows test plan                          |
 
-> **Note:** Certain mobile-first experiences (e.g., swipe to refresh, biometric auth) may not be applicable or available on desktop, and may need alternative UX.
+> **Note:** Certain Android POS/tablet-oriented interactions (e.g., swipe to refresh, biometric auth, touch-first navigation) may not be applicable or available on Windows POS systems, and may need alternative UX.
 
 ## Conclusion
 
